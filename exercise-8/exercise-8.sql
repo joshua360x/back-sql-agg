@@ -2,8 +2,8 @@
 -- include the name, count, and rank
 SELECT
 category.name,
-COUNT(*),
-RANK() OVER (ORDER BY COUNT(*) DESC)
+COUNT(rental.rental_id),
+RANK() OVER (ORDER BY COUNT(rental.rental_id) DESC)
 FROM
 category
 LEFT JOIN film_category
